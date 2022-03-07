@@ -1,104 +1,96 @@
-Automated ELK Stack Deployment
+## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted above.
+The files in this repository were used to configure the network depicted below.
 
-They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible file may be used to install only certain pieces of it, such as Filebeat.
+![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
-/etc/ansible/install-elk-playbook.yml
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+
+  - _TODO: Enter the playbook file._
 
 This document contains the following details:
+- Description of the Topologu
+- Access Policies
+- ELK Configuration
+  - Beats in Use
+  - Machines Being Monitored
+- How to Use the Ansible Build
 
-Description of the Topologu
-Access Policies
-ELK ConfigurationThese files have been tested and used to generate a live ELK deployment on Az
-Beats in Use
-Machines Being Monitored
-How to Use the Ansible Build
-Description of the topology
+
+### Description of the Topology
+
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures the application will be highly efficient in addition to restricting traffic to the network.
 
-What aspect of security do load balancers protect? What is the advantage of a jump box?_-
+Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
-Load balancer protects the system from DDos attacks by shifting attack traffic.
-Load balancing contributes to the availability aspect of security in regards to the CIA triad.
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log and system traffic.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+- _TODO: What does Filebeat watch for?_
+- _TODO: What does Metricbeat record?_
 
-What does Filebeat watch for?_
--Filebeat watches for any information in the file system which has been changed and when it has.
--Filebeat watches for log files/locations and collects log events.
+The configuration details of each machine may be found below.
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-What does Metricbeat record?
+| Name     | Function | IP Address | Operating System |
+|----------|----------|------------|------------------|
+| Jump Box | Gateway  | 10.0.0.1   | Linux            |
+| TODO     |          |            |                  |
+| TODO     |          |            |                  |
+| TODO     |          |            |                  |
 
-Metricbeats takes the metrics and statics that collect and ships them to the output that you specify.
-Metricbeat records metric and statistical data from the operating system and from services running on the server.
-The configuration details of each machine may be found below:
+### Access Policies
 
-| Name | Function | IP Address | Operating System
-|__________ ||_ |_____________________
-JumpBox | Gateway |10.2.0.3 |Linux Ubuntu
-| Web-1 | Server |10.0.0.4 |Linux Ubuntu
-| Web-2 | Server |10.3.0.5 |Linux Ubuntu
-| Web-3 | Server | 10.2.0.4 |Linux Ubuntu
-| ELK-VM1| Server |10.3.0.4 |Linux Ubuntu
+The machines on the internal network are not exposed to the public Internet. 
 
-Access Policies
-The machines on the internal network are not exposed to the public Internet.
+Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- _TODO: Add whitelisted IP addresses_
 
-Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-Add whitelisted IP address ---Public IP address which changes every time when VM is on/off: 40.87.68.147
+Machines within the network can only be accessed by _____.
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
-Machines within the network can only be accessed by SSH.
-Which machine did you allow to access your ELK VM? What was its IP address?
-
-JumpBox VM - 10.2.0.3
 A summary of the access policies in place can be found in the table below.
 
-Name	Publicly Accessible	Allowed IP Addresses
-Jump Box	Yes/No	10.2.0.3 10.2.0.3
-ELK Configuration
+| Name     | Publicly Accessible | Allowed IP Addresses |
+|----------|---------------------|----------------------|
+| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
+|          |                     |                      |
+|          |                     |                      |
+
+### Elk Configuration
+
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-What is the main advantage of automating configuration with Ansible?_
-This allows you to deploy to multiple servers using a single playbook
+- _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The playbook implements the following tasks:
-In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
--sudo docker ps
+- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- ...
+- ...
 
-/etc/ansible/install_elk.yml
-navigate to http:// [ELK1.ELK_VM.External.IP]:5601/app/Kibana
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+
+### Target Machines & Beats
+This ELK server is configured to monitor the following machines:
+- _TODO: List the IP addresses of the machines you are monitoring_
+
 We have installed the following Beats on these machines:
-Specify which Beats you successfully installed_
+- _TODO: Specify which Beats you successfully installed_
 
 These Beats allow us to collect the following information from each machine:
--: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc._
+- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-Elastic____________________________________________________________________________________________________________________________________________________________
-|Enterprise Search| | Observability |Security |Analytics
-|________________________________________ ||_________ |__________________________________________
-|Create search experience |Consolidate your metrics, |Prevent, collect, detect and respond |Explore, visualize, and analyze
-|with a refined set of API and tools |application traces, and system|and respond to threats for unified |your data using a powerful
-| |availability with purpose |protection across infrastructure |suite of analytical tools and
-| |built UIs | |applications
-| | | |
-
-Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-/etc/ansible/file/filebeat-configuration.yml
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
+- Copy the _____ file to _____.
+- Update the _____ file to include...
+- Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-Copy the filebeat.yml file to /etc/ansible/ELK1
+_TODO: Answer the following questions to fill in the blanks:_
+- _Which file is the playbook? Where do you copy it?_
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- _Which URL do you navigate to in order to check that the ELK server is running?
 
-Update the configuration file to include ELK 1 private IP: 10.3.0.4
-
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-Answer the following questions to fill in the blanks:_
-
-Which file is the playbook? Where do you copy it?_
-cp filebeat.yml | /etc/ansible /elk1plabo.txt
-
-_Which URL do you navigate to in order to check that the ELK server is running?
-
-http:// [ELK 1-VM.External.IP]: 5601/app/Kibana
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
